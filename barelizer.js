@@ -1,5 +1,6 @@
 const fs = require('fs');
 let template = fs.readFileSync("./src/app/app.component.html", "utf8");
+let style = fs.readFileSync("./src/app/app.component.scss", "utf8");
 
 const tsstruct = require("ts-structure-parser")
 
@@ -25,6 +26,7 @@ for (let _fun of _functions) {
 }
 
 let barel = {
+    style: style,
     template: template,
     properties: properties,
     functions: functions
